@@ -13,19 +13,7 @@
 ;; refresh the package list
 (package-refresh-contents)
 
-
-
-(global-linum-mode t) ;; enable line numbers globally
-
-;; org-mode
-(require 'org)
-;; Mark org mode work with files ending in .org 
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-;; The above is the default in recent emacsen
-
-;; lsp-java
-(require 'lsp-java)
-(add-hook 'java-mode-hook #'lsp)
+;; package select packages variables
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -41,5 +29,16 @@
  )
 
 
+(global-linum-mode t) ;; enable line numbers globally
+
+;; org-mode
+(require 'org)
+;; Mark org mode work with files ending in .org 
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+;; The above is the default in recent emacsen
+
+;; lsp-java
+(require 'lsp-java)
+(add-hook 'java-mode-hook #'lsp)
 
 ;; init.el ends 

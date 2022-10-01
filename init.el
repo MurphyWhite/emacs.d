@@ -4,32 +4,25 @@
 ;; --------------------
 
 (require 'package)
-(package-initialize)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
 ;; and `package-pinned-packages`. Most users will not need or want to do this.
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(package-initialize)
 
 ;; refresh the package list
 (package-refresh-contents)
 
-;; package select packages variables
+(defvar myPackages
+  '(better-defaults
+    material-theme))
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages '(php-mode markdown-mode lsp-java)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
-
+;; BASIC CUSTOMIZATION
+;; -------------------------
 (global-linum-mode t) ;; enable line numbers globally
+
+;; truncate lines if too long
+(setq truncate-lines nil)
 
 ;; org-mode
 (require 'org)
@@ -41,4 +34,20 @@
 (require 'lsp-java)
 (add-hook 'java-mode-hook #'lsp)
 
-;; init.el ends 
+;; init.el ends
+
+;; variables
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages '(org-roam php-mode markdown-mode lsp-java)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+

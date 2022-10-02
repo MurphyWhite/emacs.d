@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: todo
+# key: todo 
+# --
+
+#+Title: Murphy's List
+#+Author: Murphy
+#+SEQ_TOD
+
+[#A] 无论如何都必须完成的任务
+[#B] 应该完成的任务，但只能在A之后完成
+[#C] 完成了有益的任务，但不是强制完成
+
+#+BEGIN_COMMENT
+C-c C-t 改变状态
+C-c C-s 插入deadline
+#+END_COMMENT

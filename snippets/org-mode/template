@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: template
+# key: template
+# --
+
+* head1
+
+** head1.1
+** head1.2
+
+* head2
+** head1.1
+
+

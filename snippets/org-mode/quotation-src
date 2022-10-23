@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: quotation-src
+# key: quotation-src
+# --
+#+begin_src
+
+#+end_src

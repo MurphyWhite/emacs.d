@@ -4,14 +4,27 @@
 ;; --------------------
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
-;; and `package-pinned-packages`. Most users will not need or want to do this.
-;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(setq package-archives '(("melpa" . "http://melpa.org/packages/")
+                         ("melpa-stable" . "https://stable.melpa.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("elpy" . "http://jorgenschaefer.github.io/packages/")
+                         ("gnu" . "http://elpa.gnu.org/packages/"))
+;; This will automatically set package-enable-at-startup to nil, to avoid loading the packages again after processing the init file.
+      package-enable-at-startup nil)
+
 (package-initialize)
 
 ;; refresh the package list
-(package-refresh-contents)
+;; (package-refresh-contents)
+
+;; init the use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(eval-when-compile
+  (require 'use-package))
+
 
 (defvar myPackages
   '(better-defaults

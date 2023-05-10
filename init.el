@@ -25,6 +25,8 @@
 (eval-when-compile
   (require 'use-package))
 
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
 
 (defvar myPackages
   '(better-defaults
@@ -106,6 +108,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-babel-load-languages '((emacs-lisp . t) (python . t) (java . t)))
  '(package-selected-packages
    '(org-roam-ui use-package yasnippet org-roam php-mode markdown-mode lsp-java)))
 (custom-set-faces
